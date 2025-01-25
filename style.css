@@ -1,106 +1,56 @@
-/* Reset some default browser styles */
-body,
-h1,
-h2,
-h3,
-p,
-div {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-/* Body styling */
-body {
-	font-family: Arial, sans-serif;
-	background: linear-gradient(120deg, #ff9a9e, #fad0c4);
-	color: #333;
-	line-height: 1.6;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	min-height: 100vh;
-}
-
-/* Central text styles */
-.central-name-box {
-	text-align: center;
-	padding: 50px 0;
-	background: #fff;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-	border-radius: 10px;
-	margin: 20px;
-}
-
-.central-box h1 {
-	font-size: 3rem;
-	margin-bottom: 10px;
-	color: #ff6f61;
-}
-
-.central-text {
-	font-size: 1.5rem;
-	color: #666;
-	margin-bottom: 20px;
-}
-
-/* Locations Section */
+/* General reset for the sections */
 .locations {
-	margin: 30px auto;
 	text-align: center;
-}
-
-.locations h2 {
-	font-size: 2.5rem;
-	color: #fff;
-	text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+	padding: 20px;
 }
 
 .blurb {
-	margin: 20px 0;
-	padding: 10px;
-	background: #ffffff99;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-	border-radius: 10px;
-	transition: transform 0.3s, box-shadow 0.3s;
+	margin: 20px auto;
+	max-width: 300px;
+	position: relative;
 }
 
-/* Image Animations */
-.blurb img {
+.box {
+	position: relative;
 	width: 100%;
-	height: auto;
+	height: 200px;
+	overflow: hidden;
 	border-radius: 10px;
-	margin-bottom: 15px;
-	transition: transform 0.5s ease, box-shadow 0.3s ease;
+	background: #f0f0f0;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover Effect */
-.blurb img:hover {
-	transform: scale(1.1) rotate(5deg);
-	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+/* Add hover effect */
+.box:hover {
+	transform: scale(1.05);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.blurb:hover {
-	transform: translateY(-10px);
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+/* Animated color overlay effect */
+.effect {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff6f61);
+	opacity: 0.6;
+	mix-blend-mode: multiply;
+	transition: opacity 0.5s ease;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-	body {
-		padding: 10px;
-	}
+/* Reveal full color on hover */
+.box:hover .effect {
+	opacity: 1;
+}
 
-	.central-box h1 {
-		font-size: 2rem;
-	}
-
-	.locations h2 {
-		font-size: 2rem;
-	}
-
-	.blurb img {
-		width: 90%;
-	}
+/* Text inside each box */
+.box p {
+	position: relative;
+	z-index: 2;
+	margin: 0;
+	padding: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
 }
